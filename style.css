@@ -1,0 +1,130 @@
+:root {
+  --bg-top: #76d6c2;
+  --bg-bottom: #2b9d7b;
+  --sand: #f6e6b4;
+  --leaf: #1b6b4f;
+  --leaf-dark: #14513c;
+  --accent: #ffb703;
+  --danger: #ff5252;
+  --text: #0f2e24;
+  --frame: #0a2a1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 15% 20%, #b6f1de 0%, transparent 38%),
+              radial-gradient(circle at 80% 10%, #b5f3ff 0%, transparent 40%),
+              linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.page {
+  width: min(980px, 92vw);
+  text-align: center;
+  padding: 24px 20px 40px;
+}
+
+.title {
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #073f2e;
+  text-shadow: 0 3px 0 #b0f7df, 0 6px 12px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 8px 2px 10px;
+  text-transform: uppercase;
+}
+
+.game-shell {
+  position: relative;
+  border: 5px solid var(--frame);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #bff6ff 0%, #78d4bf 45%, #48b286 100%);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  padding: 12px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: linear-gradient(180deg, #a6e9ff 0%, #88d9c0 55%, #63c39a 100%);
+  border-radius: 10px;
+  touch-action: manipulation;
+}
+
+.lives {
+  position: absolute;
+  right: 18px;
+  bottom: 12px;
+  display: flex;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f2e24;
+  text-shadow: 0 1px 0 #e0fff4;
+}
+
+.controls {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+button#restart {
+  background: var(--accent);
+  border: none;
+  color: #3b2a00;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.15s ease;
+}
+
+button#restart:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.hint {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@media (max-width: 820px) {
+  .page {
+    width: 96vw;
+  }
+
+  .hud {
+    font-size: 16px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 820px) {
+  .page {
+    transform: rotate(90deg);
+    transform-origin: center;
+    width: 100vh;
+  }
+}
