@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ORAMI RUN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="title">ORAMI RUN</header>
+
+    <div class="hud">
+      <div class="score">Score: <span id="score">0</span></div>
+      <div class="high-score">High: <span id="highScore">0</span></div>
+    </div>
+
+    <div class="game-shell">
+      <canvas id="game" width="900" height="360" aria-label="Orami Run game"></canvas>
+      <div class="lives" id="lives"></div>
+    </div>
+
+    <div class="controls">
+      <button id="restart">Restart</button>
+      <div class="hint">Press Space to jump</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
